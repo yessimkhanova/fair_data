@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Findable, Accessible, Interoperable, and Reusable (FAIR) Data</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    
+    <body>
+
+        <h1>Findable, Accessible, Interoperable, and Reusable (FAIR) Data</h1>
+		<p>This table is designed to facilitate the assessment of data compliance with the FAIR principles.</p>
+		<p>It has been adapted by Lionel Menard and Kalamkas Yessimkhanova as an outcome of the deliberations and collaborative efforts within the GIDDT group meetings.</p>
+        <p>The original source is from the GO FAIR Initiative (https://bit.ly/yourFIP)</p>
+
+        <table id="fairTable">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th>Question</th>
+                    <th>FAIR-Compliant Protocols, Conventions, and Standards</th>
+                    <th>Your Answers</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Project name</td>
+                    <td></td>
+                    <td><input type="text" id="projectName"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Description</td>
+                    <td></td>
+                    <td><input type="text" id="description"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Web address</td>
+                    <td></td>
+                    <td><input type="text" id="webAddress"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Research area</td>
+                    <td></td>
+                    <td><input type="text" id="researchArea"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>GEO relation</td>
+                    <td></td>
+                    <td><input type="text" id="geoRelation"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Regional GEO</td>
+                    <td></td>
+                    <td><input type="text" id="regionalGeo"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Registered in GEOSS portal</td>
+                    <td></td>
+                    <td><input type="text" id="registeredGeoss"></td>
+                </tr>
+                <tr>
+                    <td>Findability</td>
+                    <td>F1</td>
+                    <td>What globally unique, persistent, resolvable identifiers do you use for metadata records?</td>
+                    <td>    
+                        <select id="metadataIdentifiers">
+                            <option value="">Select from the drop-down list</option>
+                            <option value="PURL">PURL</option>
+                            <option value="DOI">DOI</option>
+                            <option value="UUID">UUID</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </td>
+                    <td><input type="text" id="metadataComments"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>What globally unique, persistent, resolvable identifiers do you use for datasets?</td>
+                    <td>
+                        <select id="datasetIdentifiers">
+                            <option value="">Select from the drop-down list</option>
+                            <option value="PURL">PURL</option>
+                            <option value="DOI">DOI</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </td>
+                    <td><input type="text" id="datasetComments"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>F2</td>
+                    <td>Which metadata schemas do you use for findability?</td>
+                    <td>
+                        <select id="findabilitySchemas">
+                            <option value="">Select from the drop-down list</option>
+                            <option value="ISO standards">ISO standards</option>
+                            <option value="OGC SensorML">OGC SensorML</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </td>
+                    <td><input type="text" id="findabilityComments"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>F3</td>
+                    <td>What is the technology that links the persistent identifiers of your data to the metadata description?</td>
+                    <td>
+                        <select id="persistentTech">
+                            <option value="">Select from the drop-down list</option>
+                            <option value="W3C RDF">W3C RDF</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </td>
+                    <td><input type="text" id="persistentComments"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>F4</td>
+                    <td>In which search engines are your metadata records indexed?</td>
+                    <td>
+                        <select id="searchEngineMetadata">
+                            <option value="">Select from the drop-down list</option>
+                            <option value="OpenSearch">OpenSearch</option>
+                            <option value="ElasticSearch">ElasticSearch</option>
+                            <option value="Lucene">Lucene</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </td>
+                    <td><input type="text" id="searchEngineMetadataComments"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>In which search engines are your datasets indexed?</td>
+                    <td>
+                        <select id="searchEngineDatasets">
+                            <option value="">Select from the drop-down list</option>
+                            <option value="OpenSearch">OpenSearch</option>
+                            <option value="ElasticSearch">ElasticSearch</option>
+                            <option value="Lucene">Lucene</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </td>
+                    <td><input type="text" id="searchEngineDatasetsComments"></td>
+                </tr>
+                <tr>
+                    <td>Accessability</td>
+                    <td>A1.1</td>
+                    <td>Which standardized communication protocol do you use for metadata records?</td>
+                    <td>
+                        <select id="metadataProtocol">
+                            <option value="">Select from the drop-down list</option>
+                            <option value="HTTP">HTTP</option>
+                            <option value="FTP">FTP</option>
+                            <option value="SMTP">SMTP</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </td>
+                    <td><input type="text" id="metadataProtocolComments"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Which standardized communication protocol do you use for datasets?</td>
+                    <td>
+                        <select id="datasetsProtocol">
+                            <option value="">Select from the drop-down list</option>
+                            <option value="HTTP">HTTP</option>
+                            <option value="FTP">FTP</option>
+                            <option value="SMTP">SMTP</option>
+                            <option value="OGC SOS">OGC SOS</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </td>
+                    <td><input type="text" id="datasetsProtocolComments"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>A.1.2</td>
+                    <td>Which authentication & authorisation technique do you use for metadata records?</td>
+                    <td>
+                        <select id="authMetadata">
+                            <option value="">Select from the drop-down list</option>
+                            <option value="HMAC authentication">HMAC authentication</option>
+                            <option value="FTPS">FTPS</option>
+                            <option value="OAuth 2.0">OAuth 2.0</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </td>
+                    <td><input type="text" id="authMetadataComments"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Which authentication & authorisation technique do you use for datasets?</td>
+                    <td>
+                        <select id="authDatasets">
+                            <option value="">Select from the drop-down list</option>
+                            <option value="HMAC authentication">HMAC authentication</option>
+                            <option value="HTTPS">HTTPS</option>
+                            <option value="FTPS">FTPS</option>
+                            <option value="OAuth 2.0">OAuth 2.0</option>
+                            <option value="Apache">Apache</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </td>
+                    <td><input type="text" id="authDatasetsComments"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>A2</td>
+                    <td>Which metadata longevity plan do you use?</td>
+                    <td>Free text: Detailed plan and evidence on longevity</td>
+                    <td><input type="text" id="metadataLongevityPlan"></td>
+                </tr>
+                <tr>
+                    <td>Interoperability</td>
+                    <td>I1</td>
+                    <td>Which knowledge representation languages (allowing machine interoperation) do you use for metadata records?</td>
+                    <td>
+                        <select id="metadataLanguages">
+                            <option value="">Select from the drop-down list</option>
+                            <option value="OGC CSW">OGC CSW</option>
+                            <option value="OGC SensorML">OGC SensorML</option>
+                            <option value="W3C RDF">W3C RDF</option>
+                            <option value="JSON-LD">JSON-LD</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </td>
+                    <td><input type="text" id="metadataLanguagesComments"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Which knowledge representation languages (allowing machine interoperation) do you use for datasets?</td>
+                    <td>
+                        <select id="datasetsLanguages">
+                            <option value="">Select from the drop-down list</option>
+                            <option value="OPeNDAP">OPeNDAP</option>
+                            <option value="OGC SensorML">OGC SensorML</option>
+                            <option value="W3C RDF">W3C RDF</option>
+                            <option value="JSON-LD">JSON-LD</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </td>
+                    <td><input type="text" id="datasetsLanguagesComments"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>I2</td>
+                    <td>Which structured vocabularies do you use to annotate your metadata records?</td>
+                    <td>
+                        <select id="metadataVocabularies">
+                            <option value="">Select from the drop-down list</option>
+                            <option value="INSPIRE">INSPIRE</option>
+                            <option value="RO-Crate">RO-Crate</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </td>
+                    <td><input type="text" id="metadataVocabulariesComments"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Which structured vocabularies do you use to encode your datasets?</td>
+                    <td>
+                        <select id="datasetsVocabularies">
+                            <option value="">Select from the drop-down list</option>
+                            <option value="CF Conventions">CF Conventions</option>
+                            <option value="RO-Crate">RO-Crate</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </td>
+                    <td><input type="text" id="datasetsVocabulariesComments"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>I3</td>
+                    <td>Which models, schema(s) do you use for your metadata records?</td>
+                    <td>
+                        <select id="metadataSchemas">
+                            <option value="">Select from the drop-down list</option>
+                            <option value="ISO Standards">ISO Standards</option>
+                            <option value="OGC SensorML">OGC SensorML</option>
+                            <option value="W3C PROV">W3C PROV</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </td>
+                    <td><input type="text" id="metadataSchemasComments"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Which models, schema(s) do you use for your datasets?</td>
+                    <td>
+                        <select id="datasetsSchemas">
+                            <option value="">Select from the drop-down list</option>
+                            <option value="CF Conventions">CF Conventions</option>
+                            <option value="O&M">O&M</option>
+                            <option value="SWE Standards">SWE Standards</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </td>
+                    <td><input type="text" id="datasetsSchemasComments"></td>
+                </tr>
+                <tr>
+                    <td>Reuse</td>
+                    <td>R1.1</td>
+                    <td>Which usage license do you use for your metadata records?</td>
+                    <td>
+                        <select id="metadataLicense">
+                            <option value="">Select from the drop-down list</option>
+                            <option value="Creative Common Licenses">Creative Common Licenses</option>
+                            <option value="Open Database License">Open Database License</option>
+                            <option value="MIT License">MIT License</option>
+                            <option value="Apache License">Apache License</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </td>
+                    <td><input type="text" id="metadataLicenseComments"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Which usage license do you use for your datasets?</td>
+                    <td>
+                        <select id="datasetsLicense">
+                            <option value="">Select from the drop-down list</option>
+                            <option value="Creative Common Licenses">Creative Common Licenses</option>
+                            <option value="Open Database License">Open Database License</option>
+                            <option value="MIT License">MIT License</option>
+                            <option value="Apache License">Apache License</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </td>
+                    <td><input type="text" id="datasetsLicenseComments"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>R1.2</td>
+                    <td>Which metadata schemas do you use for describing the provenance of your metadata records?</td>
+                    <td>
+                        <select id="metadataProvenance">
+                            <option value="">Select from the drop-down list</option>
+                            <option value="W3C PROV">W3C PROV</option>
+                            <option value="DCAT">DCAT</option>
+                            <option value="ODRL">ODRL</option>
+                            <option value="PREMIS">PREMIS</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </td>
+                    <td><input type="text" id="metadataProvenanceComments"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Which metadata schemas do you use for describing the provenance of your datasets?</td>
+                    <td>
+                        <select id="datasetsProvenance">
+                            <option value="">Select from the drop-down list</option>
+                            <option value="W3C PROV">W3C PROV</option>
+                            <option value="DCAT">DCAT</option>
+                            <option value="ODRL">ODRL</option>
+                            <option value="PREMIS">PREMIS</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </td>
+                    <td><input type="text" id="datasetsProvenanceComments"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button onclick="generatePDF()">Download PDF</button>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+        <script>
+        function generatePDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+			// Collect data from form fields
+            const formData = {
+                projectName: document.getElementById('projectName').value || "Not filled",
+                description: document.getElementById('description').value || "Not filled",
+                webAddress: document.getElementById('webAddress').value || "Not filled",
+                researchArea: document.getElementById('researchArea').value || "Not filled",
+                geoRelation: document.getElementById('geoRelation').value || "Not filled",
+                regionalGeo: document.getElementById('regionalGeo').value || "Not filled",
+                registeredGeoss: document.getElementById('registeredGeoss').value || "Not filled",
+                metadataIdentifiers: document.getElementById('metadataIdentifiers').value || "Not selected",
+                metadataComments: document.getElementById('metadataComments').value || "Not filled",
+                datasetIdentifiers: document.getElementById('datasetIdentifiers').value || "Not selected",
+                datasetComments: document.getElementById('datasetComments').value || "Not filled",
+                findabilitySchemas: document.getElementById('findabilitySchemas').value || "Not selected",
+                findabilityComments: document.getElementById('findabilityComments').value || "Not filled",
+                persistentTech: document.getElementById('persistentTech').value || "Not selected",
+                persistentComments: document.getElementById('persistentComments').value || "Not filled",
+                searchEngineMetadata: document.getElementById('searchEngineMetadata').value || "Not selected",
+                searchEngineMetadataComments: document.getElementById('searchEngineMetadataComments').value || "Not filled",
+                searchEngineDatasets: document.getElementById('searchEngineDatasets').value || "Not selected",
+                searchEngineDatasetsComments: document.getElementById('searchEngineDatasetsComments').value || "Not filled",
+                metadataProtocol: document.getElementById('metadataProtocol').value || "Not selected",
+                metadataProtocolComments: document.getElementById('metadataProtocolComments').value || "Not filled",
+                datasetsProtocol: document.getElementById('datasetsProtocol').value || "Not selected",
+                datasetsProtocolComments: document.getElementById('datasetsProtocolComments').value || "Not filled",
+                authMetadata: document.getElementById('authMetadata').value || "Not selected",
+                authMetadataComments: document.getElementById('authMetadataComments').value || "Not filled",
+                authDatasets: document.getElementById('authDatasets').value || "Not selected",
+                authDatasetsComments: document.getElementById('authDatasetsComments').value || "Not filled",
+                metadataLongevityPlan: document.getElementById('metadataLongevityPlan').value || "Not filled",
+                metadataLanguages: document.getElementById('metadataLanguages').value || "Not selected",
+                metadataLanguagesComments: document.getElementById('metadataLanguagesComments').value || "Not filled",
+                datasetsLanguages: document.getElementById('datasetsLanguages').value || "Not selected",
+                datasetsLanguagesComments: document.getElementById('datasetsLanguagesComments').value || "Not filled",
+                metadataVocabularies: document.getElementById('metadataVocabularies').value || "Not selected",
+                metadataVocabulariesComments: document.getElementById('metadataVocabulariesComments').value || "Not filled",
+                datasetsVocabularies: document.getElementById('datasetsVocabularies').value || "Not selected",
+                datasetsVocabulariesComments: document.getElementById('datasetsVocabulariesComments').value || "Not filled",
+                metadataSchemas: document.getElementById('metadataSchemas').value || "Not selected",
+                metadataSchemasComments: document.getElementById('metadataSchemasComments').value || "Not filled",
+                datasetsSchemas: document.getElementById('datasetsSchemas').value || "Not selected",
+                datasetsSchemasComments: document.getElementById('datasetsSchemasComments').value || "Not filled",
+                metadataLicense: document.getElementById('metadataLicense').value || "Not selected",
+                metadataLicenseComments: document.getElementById('metadataLicenseComments').value || "Not filled",
+                datasetsLicense: document.getElementById('datasetsLicense').value || "Not selected",
+                datasetsLicenseComments: document.getElementById('datasetsLicenseComments').value || "Not filled",
+                metadataProvenance: document.getElementById('metadataProvenance').value || "Not selected",
+                metadataProvenanceComments: document.getElementById('metadataProvenanceComments').value || "Not filled",
+                datasetsProvenance: document.getElementById('datasetsProvenance').value || "Not selected",
+                datasetsProvenanceComments: document.getElementById('datasetsProvenanceComments').value || "Not filled",
+            };
+
+            // Define table data
+            const tableData = [
+                ["", "", "Project name", "", formData.projectName],
+                ["", "", "Description", "", formData.description],
+                ["", "", "Web address", "", formData.webAddress],
+                ["", "", "Research area", "", formData.researchArea],
+                ["", "", "GEO relation", "", formData.geoRelation],
+                ["", "", "Regional GEO", "", formData.regionalGeo],
+                ["", "", "Registered in GEOSS portal", "", formData.registeredGeoss],
+                ["F1", "", "What globally unique, persistent, resolvable identifiers do you use for metadata records?", formData.metadataIdentifiers, formData.metadataComments],
+                ["", "", "What globally unique, persistent, resolvable identifiers do you use for datasets?", formData.datasetIdentifiers, formData.datasetComments],
+                ["F2", "", "Which metadata schemas do you use for findability?", formData.findabilitySchemas, formData.findabilityComments],
+                ["F3", "", "What is the technology that links the persistent identifiers of your data to the metadata description?", formData.persistentTech, formData.persistentComments],
+                ["F4", "", "In which search engines are your metadata records indexed?", formData.searchEngineMetadata, formData.searchEngineMetadataComments],
+                ["", "", "In which search engines are your datasets indexed?", formData.searchEngineDatasets, formData.searchEngineDatasetsComments],
+                ["A1.1", "", "Which standardized communication protocol do you use for metadata records?", formData.metadataProtocol, formData.metadataProtocolComments],
+                ["", "", "Which standardized communication protocol do you use for datasets?", formData.datasetsProtocol, formData.datasetsProtocolComments],
+                ["A1.2", "", "Which authentication & authorisation technique do you use for metadata records?", formData.authMetadata, formData.authMetadataComments],
+                ["", "", "Which authentication & authorisation technique do you use for datasets?", formData.authDatasets, formData.authDatasetsComments],
+                ["A2", "", "Which metadata longevity plan do you use?", "", formData.metadataLongevityPlan],
+                ["I1", "", "Which knowledge representation languages (allowing machine interoperation) do you use for metadata records?", formData.metadataLanguages, formData.metadataLanguagesComments],
+                ["", "", "Which knowledge representation languages (allowing machine interoperation) do you use for datasets?", formData.datasetsLanguages, formData.datasetsLanguagesComments],
+                ["I2", "", "Which structured vocabularies do you use to annotate your metadata records?", formData.metadataVocabularies, formData.metadataVocabulariesComments],
+                ["", "", "Which structured vocabularies do you use to encode your datasets?", formData.datasetsVocabularies, formData.datasetsVocabulariesComments],
+                ["I3", "", "Which models, schema(s) do you use for your metadata records?", formData.metadataSchemas, formData.metadataSchemasComments],
+                ["", "", "Which models, schema(s) do you use for your datasets?", formData.datasetsSchemas, formData.datasetsSchemasComments],
+                ["R1.1", "", "Which usage license do you use for your metadata records?", formData.metadataLicense, formData.metadataLicenseComments],
+                ["", "", "Which usage license do you use for your datasets?", formData.datasetsLicense, formData.datasetsLicenseComments],
+                ["R1.2", "", "Which metadata schemas do you use for describing the provenance of your metadata records?", formData.metadataProvenance, formData.metadataProvenanceComments],
+                ["", "", "Which metadata schemas do you use for describing the provenance of your datasets?", formData.datasetsProvenance, formData.datasetsProvenanceComments]
+            ];
+
+    // Add title
+doc.setFontSize(18);
+doc.text('FAIR Data', 14, 20);
+
+// Add description
+doc.setFontSize(12);
+doc.text('This table is designed to facilitate the assessment of data compliance with the FAIR principles.', 14, 30);
+doc.text('It has been adapted by Lionel Menard and Kalamkas Yessimkhanova as an outcome', 14, 37);
+doc.text('of the deliberations and collaborative efforts within the GIDDT group meetings.', 14, 44);
+doc.text('The original source is from the GO FAIR Initiative (https://bit.ly/yourFIP)', 14, 51);
+
+// Move the starting point of the table down a bit
+const startY = 60;
+// Define column widths in PDF
+
+const columnStyles = {
+            2: {cellWidth: 50}
+            
+    
+            
+        }
+// Add table to PDF
+doc.autoTable({
+    head: [['', '', 'Question', 'FAIR-Compliant Protocols, Conventions, and Standards', 'Your Answers']],
+    body: tableData.map(row => [row[0], row[1], row[2], row[3], row[4]]),
+    startY: startY,
+    theme: 'striped',
+            columnStyles: columnStyles,
+            
+});
+
+// Save the PDF
+doc.save('fair_data.pdf');}
+        </script>
+    </body>
+</html>

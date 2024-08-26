@@ -1,0 +1,81 @@
+ h1 {    
+    font-family: verdana;
+    font-size: 40px;
+    font-style: bold;
+    text-align: center;
+  }
+  
+  p {
+    font-family: verdana;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  table {
+    font-family: arial, sans-serif;
+    
+    width: 100%;
+  }
+  
+  th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+  }
+th:nth-child(1) {
+    width: 5%; /* Adjust the percentage or pixel value as needed */
+}
+th:nth-child(2) {
+    width: 2.5%; /* Adjust the percentage or pixel value as needed */
+}
+th:nth-child(3) {
+    width: 30%; /* Adjust the percentage or pixel value as needed */
+}
+th:nth-child(4) {
+    width: 13%; /* Adjust the percentage or pixel value as needed */
+}
+th:nth-child(5) {
+    width: 30%; /* Adjust the percentage or pixel value as needed */
+}
+
+  td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+
+tr:hover {
+    background-color: lightgray; 
+}
+
+  select, input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 7px;
+    font-size: 14px;
+    border: 2px solid #ccc; 
+    border-radius: 5px; 
+}
+
+/* Change the border color on focus */
+select:focus {
+    border-color: #007bff; 
+    outline: none; 
+}
+  
+#downloadButton {
+  display: block;
+  margin: 0 auto; /* Centers the button horizontally */
+  background-color: #4CAF50; /* Change the background color */
+  color: white; /* Change the text color */
+  font-size: 18px; /* Change the font size */
+  padding: 10px 20px; /* Add padding to increase button size */
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#downloadButton:hover {
+  background-color: #45a049; /* Change the background color on hover */
+}
